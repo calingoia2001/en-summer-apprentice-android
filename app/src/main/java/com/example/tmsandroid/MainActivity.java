@@ -1,37 +1,28 @@
 package com.example.tmsandroid;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.card.MaterialCardView;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ConstraintLayout parent;
-    private Button button;
-    private MaterialCardView cardView;
+     private RecyclerView eventsRecView;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        parent = findViewById(R.id.parent);
-        button = findViewById(R.id.buttonID);
-        cardView = findViewById(R.id.cardView);
+        eventsRecView = findViewById(R.id.eventsRecView);
 
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Card Clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
+        ArrayList<Event> events = new ArrayList<>();
+        events.add(new Event(1,"Untold","Festival de Muzica", "https://i0.1616.ro/media/2/2701/33647/21212741/1/untold.png"));
+        events.add(new Event(2, "RockFestival", "Festival de Rock", "https://www.institutiilestatului.ro/wp-content/uploads/2023/06/355694001_658527916301559_2796432390177616914_n.jpg"));
+       EventsRecViewAdapter adapter = new EventsRecViewAdapter();
+       adapter.setEvents(events);
+       eventsRecView.setAdapter(adapter);
+       eventsRecView.setLayoutManager(new LinearLayoutManager(this));
     }
 }
