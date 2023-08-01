@@ -10,11 +10,28 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
-public class MainActivity extends AppCompatActivity{
+import com.google.android.material.card.MaterialCardView;
+
+public class MainActivity extends AppCompatActivity {
+    private ConstraintLayout parent;
+    private Button button;
+    private MaterialCardView cardView;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        parent = findViewById(R.id.parent);
+        button = findViewById(R.id.buttonID);
+        cardView = findViewById(R.id.cardView);
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"Card Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
