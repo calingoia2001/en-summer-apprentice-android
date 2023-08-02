@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdapter.ViewHolder> {
 
@@ -25,6 +26,11 @@ public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdap
 
     public EventsRecViewAdapter(Context context) {
         this.context = context;
+    }
+
+    public void setFilteredList(ArrayList<Event> filteredList) {
+        this.events = filteredList;
+        notifyDataSetChanged();
     }
 
     @NonNull
