@@ -38,7 +38,7 @@ public class OrdersRecViewAdapter extends RecyclerView.Adapter<OrdersRecViewAdap
         holder.orderedAt.setText(orders.get(position).getOrderedAt());
         holder.numberOfTickets.setText(String.valueOf(orders.get(position).getNumberOfTickets()));
         holder.totalPrice.setText(String.valueOf(orders.get(position).getTotalPrice()));
-        holder.test.setText("test");
+        holder.test.setText("Edit your order:");
 
         if(orders.get(position).isExpanded()) {
             TransitionManager.beginDelayedTransition(holder.parentSecond);

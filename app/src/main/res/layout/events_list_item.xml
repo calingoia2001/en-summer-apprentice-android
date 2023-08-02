@@ -4,30 +4,32 @@
     android:id="@+id/parent"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_margin="10dp"
     android:padding="10dp"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="15dp"
-    android:layout_margin="10dp">
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp"
+    app:cardMaxElevation="12dp">
 
     <RelativeLayout
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/card_gradient">
+
         <RelativeLayout
+            android:id="@+id/collapseRelativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/collapseRelativeLayout">
-            
+            android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/txtName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="7dp"
-                android:fontFamily="@font/baloo"
+                android:fontFamily="@font/bebas"
                 android:text="Event Name"
                 android:textColor="@color/white"
-                android:textSize="26dp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -37,65 +39,107 @@
                 android:layout_below="@+id/txtName"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
+                android:contentDescription="image"
                 android:src="@drawable/ic_launcher_background" />
-            
-            <ImageView
+
+            <TextView
+                android:id="@+id/eventDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_down_arrow"
-                android:layout_below="@+id/image"
+                android:layout_below="@id/image"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:id="@+id/btnDownArrow"
-                android:layout_alignParentEnd="true"/>
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/collapseRelativeLayout"
-            android:id="@+id/expandedRelativeLayout"
-            android:visibility="visible">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:fontFamily="@font/aldrich"
                 android:text="EventDescription"
-                android:id="@+id/eventDescription"/>
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/startDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="StartDate"
-                android:id="@+id/startDate"
                 android:layout_below="@+id/eventDescription"
-                android:layout_marginTop="5dp"/>
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/aldrich"
+                android:text="StartDate"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
 
-            <RadioGroup
-                android:id="@+id/radioGroup"
+            <ImageView
+                android:id="@+id/btnDownArrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/startDate"
-                android:orientation="vertical">
-                <RadioButton android:id="@+id/standard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Standard"
-                    android:onClick="onRadioButtonClicked"/>
-                <RadioButton android:id="@+id/VIP"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:contentDescription="downArrow"
+                android:src="@drawable/ic_down_arrow" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/expandedRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/collapseRelativeLayout"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/buyTicketsText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="VIP"
-                android:onClick="onRadioButtonClicked"/>
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Buy Tickets:"
+                android:textColor="@color/purple_200"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/buyTicketsText"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/standard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aldrich"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Standard"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold|italic" />
+
+                <RadioButton
+                    android:id="@+id/VIP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aldrich"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="VIP"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold|italic" />
             </RadioGroup>
 
             <EditText
                 android:id="@+id/editText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/radioGroup"
+                android:layout_centerHorizontal="true"
                 android:hint="Enter number of tickets"
                 android:inputType="numberDecimal"
                 android:text=""
-                android:layout_below="@id/radioGroup"/>
+                android:textSize="12sp"
+                android:theme="@style/EditTextStyle" />
 
             <ImageView
                 android:id="@+id/buyIcon"
@@ -103,18 +147,19 @@
                 android:layout_height="48dp"
                 android:layout_below="@id/editText"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/ic_buy_buy"
-                android:onClick="openSecondActivity"
                 android:contentDescription="Buy"
+                android:onClick="openSecondActivity"
                 android:padding="8dp"
-                />
+                android:src="@drawable/ic_buy_buy" />
+
             <ImageView
+                android:id="@+id/btnUpArrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_up_arrow"
                 android:layout_below="@id/buyIcon"
                 android:layout_alignParentEnd="true"
-                android:id="@+id/btnUpArrow" />
+                android:contentDescription="upArrow"
+                android:src="@drawable/ic_up_arrow" />
         </RelativeLayout>
     </RelativeLayout>
 

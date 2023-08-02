@@ -1,18 +1,13 @@
 package com.example.tmsandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-
-import androidx.annotation.Nullable;
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.tmsandroid.adapters.EventsRecViewAdapter;
 import com.example.tmsandroid.adapters.OrdersRecViewAdapter;
-import com.example.tmsandroid.models.Event;
 import com.example.tmsandroid.models.Order;
-
 import java.util.ArrayList;
 
 public class SecondActivity extends AppCompatActivity {
@@ -36,5 +31,9 @@ public class SecondActivity extends AppCompatActivity {
         adapter.setOrders(orders);
         ordersRecView.setAdapter(adapter);
         ordersRecView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    public void openFirstActivity(View view) {
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

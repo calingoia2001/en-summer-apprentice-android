@@ -12,12 +12,24 @@
         android:id="@+id/textEvents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:text="Orders"
-        android:layout_centerInParent="true"
         android:textColor="@color/white"
         android:textSize="40sp"
         android:layout_centerVertical="true"
         android:layout_marginStart="10dp"
-        android:fontFamily="@font/baloo"/>
+        android:fontFamily="@font/bebas"/>
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_arrow"
+            android:onClick="openFirstActivity"
+            android:contentDescription="GoBack"
+            android:padding="8dp"
+            />
     </RelativeLayout>
 </androidx.appcompat.widget.Toolbar>

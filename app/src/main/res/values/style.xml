@@ -8,4 +8,9 @@
         <item name="android:textColorHint">#FFFFFF</item>
     </style>
 
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <!-- Change the hint text color to white -->
+        <item name="android:textColorHint">#FFFFFF</item>
+    </style>
+
 </resources>
