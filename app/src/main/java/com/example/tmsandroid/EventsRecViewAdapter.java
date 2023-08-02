@@ -1,6 +1,7 @@
 package com.example.tmsandroid;
 
 import android.content.Context;
+import android.transition.TransitionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,10 +48,28 @@ public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdap
             }
         });
 
+
+        holder.eventDescription.setText(events.get(position).getEventDescription());
+        holder.startDate.setText(events.get(position).getStartDate());
+
         Glide.with(context)
                 .asBitmap()
                 .load(events.get(position).getImageUrl())
                 .into(holder.image);
+
+
+
+
+        if(events.get(position).isExpanded()) {
+            TransitionManager.beginDelayedTransition(holder.parent);
+            holder.expandedRelativeLayout.setVisibility(View.VISIBLE);
+            holder.downArrow.setVisibility(View.GONE);
+        } else {
+            TransitionManager.beginDelayedTransition(holder.parent);
+            holder.expandedRelativeLayout.setVisibility(View.GONE);
+            holder.downArrow.setVisibility(View.VISIBLE);
+        }
+
     }
 
     @Override
@@ -71,12 +90,38 @@ public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdap
         private TextView txtName, txtID;
         private CardView parent;
         private ImageView image;
+        private ImageView downArrow, upArrow;
+        private RelativeLayout expandedRelativeLayout;
+        private TextView eventDescription, startDate;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.txtName);
             parent = itemView.findViewById(R.id.parent);
             txtID = itemView.findViewById(R.id.txtID);
             image = itemView.findViewById(R.id.image);
+            downArrow = itemView.findViewById(R.id.btnDownArrow);
+            upArrow = itemView.findViewById(R.id.btnUpArrow);
+            expandedRelativeLayout = itemView.findViewById(R.id.expandedRelativeLayout);
+            eventDescription = itemView.findViewById(R.id.eventDescription);
+            startDate = itemView.findViewById(R.id.startDate);
+
+            downArrow.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Event event = events.get(getAdapterPosition());
+                    event.setExpanded(!event.isExpanded());
+                    notifyItemChanged(getAdapterPosition());
+                }
+            });
+
+            upArrow.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Event event = events.get(getAdapterPosition());
+                    event.setExpanded(!event.isExpanded());
+                    notifyItemChanged(getAdapterPosition());
+                }
+            });
         }
     }
 

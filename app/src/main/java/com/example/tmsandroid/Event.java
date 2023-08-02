@@ -5,12 +5,24 @@ public class Event {
     private String eventName;
     private String eventDescription;
     private String imageUrl;
+    private String startDate;
+    private boolean isExpanded;
 
-    public Event(int eventID, String eventName, String eventDescription, String imageUrl) {
+    public Event(int eventID, String eventName, String eventDescription, String imageUrl, String startDate) {
         this.eventID = eventID;
         this.eventName = eventName;
         this.eventDescription = eventDescription;
         this.imageUrl = imageUrl;
+        this.startDate = startDate;
+        isExpanded = false;
+    }
+
+    public boolean isExpanded() {
+        return isExpanded;
+    }
+
+    public void setExpanded(boolean expanded) {
+        isExpanded = expanded;
     }
 
     public int getEventID() {
@@ -45,6 +57,14 @@ public class Event {
         this.imageUrl = imageUrl;
     }
 
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
     @Override
     public String toString() {
         return "Event{" +
@@ -52,6 +72,7 @@ public class Event {
                 ", eventName='" + eventName + '\'' +
                 ", eventDescription='" + eventDescription + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
+                ", startDate='" + startDate + '\'' +
                 '}';
     }
 }
