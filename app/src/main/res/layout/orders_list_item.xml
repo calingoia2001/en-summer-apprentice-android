@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parentSecond"
+    android:padding="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="15dp"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/collapseRelativeLayout2">
+
+            <TextView
+                android:id="@+id/orderID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/baloo"
+                android:text="OrderID"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/orderedAt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orderID"
+                android:layout_marginTop="5dp"
+                android:text="OrderedAt"
+                android:textStyle="italic"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:id="@+id/numberOfTickets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orderedAt"
+                android:layout_marginTop="5dp"
+                android:text="Number of Tickets"
+                android:textStyle="italic"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:id="@+id/totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/numberOfTickets"
+                android:layout_marginTop="5dp"
+                android:text="Total Price"
+                android:textStyle="italic"
+                android:layout_marginStart="5dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_down_arrow"
+                android:layout_below="@+id/totalPrice"
+                android:layout_marginTop="5dp"
+                android:id="@+id/btnDownArrow2"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/collapseRelativeLayout2"
+            android:id="@+id/expandedRelativeLayout2"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test"
+                android:id="@+id/test"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_up_arrow"
+                android:layout_below="@id/test"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/btnUpArrow2" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

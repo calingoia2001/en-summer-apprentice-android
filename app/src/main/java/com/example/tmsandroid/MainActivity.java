@@ -1,15 +1,17 @@
 package com.example.tmsandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.tmsandroid.adapters.EventsRecViewAdapter;
+import com.example.tmsandroid.models.Event;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setTitle("Events");
 
         eventsRecView = findViewById(R.id.eventsRecView);
         eventList = new ArrayList<>();
@@ -69,4 +72,8 @@ public class MainActivity extends AppCompatActivity {
             adapter2.setFilteredList(filteredList);
         }
     } */
+
+    public void openSecondActivity(View view) {
+        startActivity(new Intent(this, SecondActivity.class));
+    }
 }

@@ -21,6 +21,18 @@
         app:queryHint="Search here for events ..."
         app:iconifiedByDefault="false"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ordersButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to Orders"
+        app:layout_constraintBottom_toTopOf="@+id/eventsRecView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        android:layout_marginTop="20dp"
+        android:onClick="openSecondActivity"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/eventsRecView"
         android:layout_width="wrap_content"
@@ -28,6 +40,6 @@
         android:layout_margin="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toBottomOf="@+id/ordersButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

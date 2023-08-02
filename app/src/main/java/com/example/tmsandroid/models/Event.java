@@ -1,4 +1,4 @@
-package com.example.tmsandroid;
+package com.example.tmsandroid.models;
 
 public class Event {
     private int eventID;

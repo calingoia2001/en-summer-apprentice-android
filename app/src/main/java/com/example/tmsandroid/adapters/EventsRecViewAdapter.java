@@ -1,4 +1,4 @@
-package com.example.tmsandroid;
+package com.example.tmsandroid.adapters;
 
 import android.content.Context;
 import android.transition.TransitionManager;
@@ -15,9 +15,10 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.tmsandroid.R;
+import com.example.tmsandroid.models.Event;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdapter.ViewHolder> {
 
