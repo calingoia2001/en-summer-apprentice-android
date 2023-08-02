@@ -8,13 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.tmsandroid.R;
-import com.example.tmsandroid.models.Event;
 import com.example.tmsandroid.models.Order;
 
 import java.util.ArrayList;
@@ -81,7 +78,7 @@ public class OrdersRecViewAdapter extends RecyclerView.Adapter<OrdersRecViewAdap
             orderedAt = itemView.findViewById(R.id.orderedAt);
             numberOfTickets = itemView.findViewById(R.id.numberOfTickets);
             totalPrice = itemView.findViewById(R.id.totalPrice);
-            test = itemView.findViewById(R.id.test);
+            test = itemView.findViewById(R.id.edit);
             downArrow = itemView.findViewById(R.id.btnDownArrow2);
             upArrow = itemView.findViewById(R.id.btnUpArrow2);
             expandedRelativeLayout2 = itemView.findViewById(R.id.expandedRelativeLayout2);

@@ -6,7 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context="com.example.tmsandroid.MainActivity">
+    tools:context="com.example.tmsandroid.MainActivity"
+    android:background="@color/lavender">
+
+    <include android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
@@ -17,29 +21,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:queryHint="Search here for events ..."
-        app:iconifiedByDefault="false"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/ordersButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go to Orders"
-        app:layout_constraintBottom_toTopOf="@+id/eventsRecView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
-        android:layout_marginTop="20dp"
-        android:onClick="openSecondActivity"/>
+        app:iconifiedByDefault="false"
+        android:theme="@style/SearchViewStyle"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/eventsRecView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_margin="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ordersButton" />
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

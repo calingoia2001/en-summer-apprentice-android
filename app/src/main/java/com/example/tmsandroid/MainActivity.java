@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().setTitle("Events");
+        //getSupportActionBar().setTitle("Events");
 
         eventsRecView = findViewById(R.id.eventsRecView);
         eventList = new ArrayList<>();

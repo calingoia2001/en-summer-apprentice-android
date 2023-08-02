@@ -11,7 +11,8 @@
 
     <RelativeLayout
         android:layout_width="200dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_gradient">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,19 +72,58 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/collapseRelativeLayout2"
             android:id="@+id/expandedRelativeLayout2"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Test"
-                android:id="@+id/test"/>
+                android:text="Edit:"
+                android:id="@+id/edit"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroupEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edit"
+                android:orientation="vertical">
+                <RadioButton android:id="@+id/standard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Standard"
+                    android:onClick="onRadioButtonClicked"/>
+                <RadioButton android:id="@+id/VIP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VIP"
+                    android:onClick="onRadioButtonClicked"/>
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Edit number of tickets"
+                android:inputType="numberDecimal"
+                android:text=""
+                android:layout_below="@id/radioGroupEdit"/>
+
+            <ImageView
+                android:id="@+id/deleteIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_below="@id/editText2"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_delete_delete"
+                android:onClick="openSecondActivity"
+                android:contentDescription="Delete"
+                android:padding="8dp"
+                />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_up_arrow"
-                android:layout_below="@id/test"
+                android:layout_below="@id/deleteIcon"
                 android:layout_alignParentEnd="true"
                 android:id="@+id/btnUpArrow2" />
 

@@ -6,7 +6,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="10dp"
     tools:context="com.example.tmsandroid.SecondActivity"
-    android:id="@+id/parentSecond">
+    android:id="@+id/parentSecond"
+    android:background="@color/lavender">
+
+    <include android:id="@+id/toolbarOrders"
+        layout="@layout/toolbar_orders"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ordersRecView"
@@ -16,6 +20,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarOrders" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

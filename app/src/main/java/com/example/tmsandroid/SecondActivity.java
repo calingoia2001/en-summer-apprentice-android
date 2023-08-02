@@ -21,7 +21,7 @@ public class SecondActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        getSupportActionBar().setTitle("Orders");
+        //getSupportActionBar().setTitle("Orders");
 
         ordersRecView = findViewById(R.id.ordersRecView);
 

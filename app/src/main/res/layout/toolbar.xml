@@ -2,7 +2,34 @@
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/orange"
+    android:background="@drawable/toolbar_gradient"
     android:elevation="4dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/textEvents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Events"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/baloo"/>
+
+        <ImageView
+            android:id="@+id/checkoutIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_checkout_checkout"
+            android:onClick="openSecondActivity"
+            android:contentDescription="Checkout"
+            android:padding="8dp"
+            />
+    </RelativeLayout>
 
 </androidx.appcompat.widget.Toolbar>

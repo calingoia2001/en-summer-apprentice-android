@@ -21,10 +21,8 @@ import com.example.tmsandroid.models.Event;
 import java.util.ArrayList;
 
 public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdapter.ViewHolder> {
-
     private ArrayList<Event> events = new ArrayList<>();
     private Context context;
-
     public EventsRecViewAdapter(Context context) {
         this.context = context;
     }
@@ -46,7 +44,7 @@ public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         holder.txtName.setText(events.get(position).getEventName());
-        holder.txtID.setText(String.valueOf(events.get(position).getEventID()));
+
 
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,7 +92,7 @@ public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdap
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView txtName, txtID;
+        private TextView txtName;
         private CardView parent;
         private ImageView image;
         private ImageView downArrow, upArrow;
@@ -104,7 +102,6 @@ public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdap
             super(itemView);
             txtName = itemView.findViewById(R.id.txtName);
             parent = itemView.findViewById(R.id.parent);
-            txtID = itemView.findViewById(R.id.txtID);
             image = itemView.findViewById(R.id.image);
             downArrow = itemView.findViewById(R.id.btnDownArrow);
             upArrow = itemView.findViewById(R.id.btnUpArrow);
@@ -131,6 +128,4 @@ public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdap
             });
         }
     }
-
-
 }
