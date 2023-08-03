@@ -55,7 +55,7 @@ public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdap
 
 
         holder.eventDescription.setText(events.get(position).getEventDescription());
-        holder.startDate.setText(events.get(position).getStartDate());
+        holder.startDate.setText("Date: " + events.get(position).getStartDate());
 
         Glide.with(context)
                 .asBitmap()

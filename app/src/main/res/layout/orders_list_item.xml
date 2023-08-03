@@ -21,16 +21,29 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/orderDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Order details:"
+                android:textColor="@color/purple_700"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/orderID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="7dp"
-                android:fontFamily="@font/bebas"
+                android:layout_below="@+id/orderDetails"
+                android:fontFamily="@font/aldrich"
                 android:text="OrderID"
                 android:textColor="@color/white"
-                android:textSize="32sp"
-                android:textStyle="bold" />
+                android:textSize="22sp"
+                android:textStyle="italic" />
 
             <TextView
                 android:id="@+id/orderedAt"

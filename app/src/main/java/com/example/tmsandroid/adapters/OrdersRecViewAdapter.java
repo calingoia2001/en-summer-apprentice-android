@@ -34,10 +34,10 @@ public class OrdersRecViewAdapter extends RecyclerView.Adapter<OrdersRecViewAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.orderID.setText(String.valueOf(orders.get(position).getEventID()));
-        holder.orderedAt.setText(orders.get(position).getOrderedAt());
-        holder.numberOfTickets.setText(String.valueOf(orders.get(position).getNumberOfTickets()));
-        holder.totalPrice.setText(String.valueOf(orders.get(position).getTotalPrice()));
+        holder.orderID.setText(String.valueOf("Order ID: " + orders.get(position).getEventID()));
+        holder.orderedAt.setText("Order date: " + orders.get(position).getOrderedAt());
+        holder.numberOfTickets.setText(String.valueOf("Number of tickets: " + orders.get(position).getNumberOfTickets()));
+        holder.totalPrice.setText(String.valueOf("Total Price: " + orders.get(position).getTotalPrice()));
         holder.test.setText("Edit your order:");
 
         if(orders.get(position).isExpanded()) {
