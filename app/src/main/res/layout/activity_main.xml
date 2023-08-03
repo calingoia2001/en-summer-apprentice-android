@@ -22,7 +22,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:queryHint="Search here for events ..."
+        app:queryHint="Search here for eventTests ..."
         app:iconifiedByDefault="false"
         android:theme="@style/SearchViewStyle"/>
 

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tmsandroid.adapters.EventsRecViewAdapter;
-import com.example.tmsandroid.models.Event;
+import com.example.tmsandroid.models.EventTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,16 +19,15 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
      private RecyclerView eventsRecView;
      private SearchView searchView;
-     private List<Event> eventList;
+     private List<EventTest> eventTestList;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //getSupportActionBar().setTitle("Events");
 
         eventsRecView = findViewById(R.id.eventsRecView);
-        eventList = new ArrayList<>();
+        eventTestList = new ArrayList<>();
 
         searchView = findViewById(R.id.searchView);
         searchView.clearFocus();
@@ -45,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ArrayList<Event> events = new ArrayList<>();
-        events.add(new Event(1,"Untold","Festival de Muzica", "https://i0.1616.ro/media/2/2701/33647/21212741/1/untold.png", "2022"));
-        events.add(new Event(2, "RockFestival", "Festival de Rock", "https://www.institutiilestatului.ro/wp-content/uploads/2023/06/355694001_658527916301559_2796432390177616914_n.jpg", "2023"));
-        events.add(new Event(3, "JazzFestival", "Festival de Jazz", "https://www.centrulculturaldeva.ro/wp-content/uploads/2022/08/DJF.jpg", "2024"));
-        events.add(new Event(4, "FolkFestival", "Festival de Folk", "https://www.observatorcultural.ro/wp-content/uploads/2022/07/afis-Folk-la-altar-scaled.jpg", "2019"));
+        ArrayList<EventTest> eventTests = new ArrayList<>();
+        eventTests.add(new EventTest(1,"Untold","Festival de Muzica", "https://i0.1616.ro/media/2/2701/33647/21212741/1/untold.png", "2022"));
+        eventTests.add(new EventTest(2, "RockFestival", "Festival de Rock", "https://www.institutiilestatului.ro/wp-content/uploads/2023/06/355694001_658527916301559_2796432390177616914_n.jpg", "2023"));
+        eventTests.add(new EventTest(3, "JazzFestival", "Festival de Jazz", "https://www.centrulculturaldeva.ro/wp-content/uploads/2022/08/DJF.jpg", "2024"));
+        eventTests.add(new EventTest(4, "FolkFestival", "Festival de Folk", "https://www.observatorcultural.ro/wp-content/uploads/2022/07/afis-Folk-la-altar-scaled.jpg", "2019"));
 
         EventsRecViewAdapter adapter = new EventsRecViewAdapter(this);
-       adapter.setEvents(events);
+       adapter.setEvents(eventTests);
        eventsRecView.setAdapter(adapter);
        eventsRecView.setLayoutManager(new LinearLayoutManager(this));
     }

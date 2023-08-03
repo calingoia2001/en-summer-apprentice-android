@@ -12,12 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.tmsandroid.R;
-import com.example.tmsandroid.models.Order;
+import com.example.tmsandroid.models.OrderTest;
 
 import java.util.ArrayList;
 
 public class OrdersRecViewAdapter extends RecyclerView.Adapter<OrdersRecViewAdapter.ViewHolder> {
-    private ArrayList<Order> orders = new ArrayList<>();
+    private ArrayList<OrderTest> orderTests = new ArrayList<>();
     private Context context;
 
     public OrdersRecViewAdapter(Context context) {
@@ -34,13 +34,13 @@ public class OrdersRecViewAdapter extends RecyclerView.Adapter<OrdersRecViewAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.orderID.setText(String.valueOf("Order ID: " + orders.get(position).getEventID()));
-        holder.orderedAt.setText("Order date: " + orders.get(position).getOrderedAt());
-        holder.numberOfTickets.setText(String.valueOf("Number of tickets: " + orders.get(position).getNumberOfTickets()));
-        holder.totalPrice.setText(String.valueOf("Total Price: " + orders.get(position).getTotalPrice()));
+        holder.orderID.setText(String.valueOf("Order ID: " + orderTests.get(position).getEventID()));
+        holder.orderedAt.setText("Order date: " + orderTests.get(position).getOrderedAt());
+        holder.numberOfTickets.setText(String.valueOf("Number of tickets: " + orderTests.get(position).getNumberOfTickets()));
+        holder.totalPrice.setText(String.valueOf("Total Price: " + orderTests.get(position).getTotalPrice()));
         holder.test.setText("Edit your order:");
 
-        if(orders.get(position).isExpanded()) {
+        if(orderTests.get(position).isExpanded()) {
             TransitionManager.beginDelayedTransition(holder.parentSecond);
             holder.expandedRelativeLayout2.setVisibility(View.VISIBLE);
             holder.downArrow.setVisibility(View.GONE);
@@ -54,15 +54,15 @@ public class OrdersRecViewAdapter extends RecyclerView.Adapter<OrdersRecViewAdap
 
     @Override
     public int getItemCount() {
-        return orders.size();
+        return orderTests.size();
     }
 
-    public ArrayList<Order> getOrders() {
-        return orders;
+    public ArrayList<OrderTest> getOrders() {
+        return orderTests;
     }
 
-    public void setOrders(ArrayList<Order> orders) {
-        this.orders = orders;
+    public void setOrders(ArrayList<OrderTest> orderTests) {
+        this.orderTests = orderTests;
         notifyDataSetChanged();
     }
 
@@ -86,8 +86,8 @@ public class OrdersRecViewAdapter extends RecyclerView.Adapter<OrdersRecViewAdap
             downArrow.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Order order = orders.get(getAdapterPosition());
-                    order.setExpanded(!order.isExpanded());
+                    OrderTest orderTest = orderTests.get(getAdapterPosition());
+                    orderTest.setExpanded(!orderTest.isExpanded());
                     notifyItemChanged(getAdapterPosition());
                 }
             });
@@ -95,8 +95,8 @@ public class OrdersRecViewAdapter extends RecyclerView.Adapter<OrdersRecViewAdap
             upArrow.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Order order = orders.get(getAdapterPosition());
-                    order.setExpanded(!order.isExpanded());
+                    OrderTest orderTest = orderTests.get(getAdapterPosition());
+                    orderTest.setExpanded(!orderTest.isExpanded());
                     notifyItemChanged(getAdapterPosition());
                 }
             });

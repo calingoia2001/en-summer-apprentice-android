@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TMSandroid</string>
+    <string name="form_name">form_name</string>
+    <string name="form_id">form_id\n</string>
+    <string name="form_capacity">form_capacity\n</string>
+    <string name="form_type">form_type\n</string>
+    <string name="save_venue">save_venue\n</string>
+    <string name="get_venue">get_venue\n</string>
 </resources>

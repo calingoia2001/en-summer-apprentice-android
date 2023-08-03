@@ -16,19 +16,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.tmsandroid.R;
-import com.example.tmsandroid.models.Event;
+import com.example.tmsandroid.models.EventTest;
 
 import java.util.ArrayList;
 
 public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdapter.ViewHolder> {
-    private ArrayList<Event> events = new ArrayList<>();
+    private ArrayList<EventTest> eventTests = new ArrayList<>();
     private Context context;
     public EventsRecViewAdapter(Context context) {
         this.context = context;
     }
 
-    public void setFilteredList(ArrayList<Event> filteredList) {
-        this.events = filteredList;
+    public void setFilteredList(ArrayList<EventTest> filteredList) {
+        this.eventTests = filteredList;
         notifyDataSetChanged();
     }
 
@@ -43,29 +43,29 @@ public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdap
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.txtName.setText(events.get(position).getEventName());
+        holder.txtName.setText(eventTests.get(position).getEventName());
 
 
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, events.get(position).getEventName() + " selected!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, eventTests.get(position).getEventName() + " selected!", Toast.LENGTH_SHORT).show();
             }
         });
 
 
-        holder.eventDescription.setText(events.get(position).getEventDescription());
-        holder.startDate.setText("Date: " + events.get(position).getStartDate());
+        holder.eventDescription.setText(eventTests.get(position).getEventDescription());
+        holder.startDate.setText("Date: " + eventTests.get(position).getStartDate());
 
         Glide.with(context)
                 .asBitmap()
-                .load(events.get(position).getImageUrl())
+                .load(eventTests.get(position).getImageUrl())
                 .into(holder.image);
 
 
 
 
-        if(events.get(position).isExpanded()) {
+        if(eventTests.get(position).isExpanded()) {
             TransitionManager.beginDelayedTransition(holder.parent);
             holder.expandedRelativeLayout.setVisibility(View.VISIBLE);
             holder.downArrow.setVisibility(View.GONE);
@@ -79,15 +79,15 @@ public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdap
 
     @Override
     public int getItemCount() {
-        return events.size();
+        return eventTests.size();
     }
 
-    public ArrayList<Event> getEvents() {
-        return events;
+    public ArrayList<EventTest> getEvents() {
+        return eventTests;
     }
 
-    public void setEvents(ArrayList<Event> events) {
-        this.events = events;
+    public void setEvents(ArrayList<EventTest> eventTests) {
+        this.eventTests = eventTests;
         notifyDataSetChanged();
     }
 
@@ -112,8 +112,8 @@ public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdap
             downArrow.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Event event = events.get(getAdapterPosition());
-                    event.setExpanded(!event.isExpanded());
+                    EventTest eventTest = eventTests.get(getAdapterPosition());
+                    eventTest.setExpanded(!eventTest.isExpanded());
                     notifyItemChanged(getAdapterPosition());
                 }
             });
@@ -121,8 +121,8 @@ public class EventsRecViewAdapter extends RecyclerView.Adapter<EventsRecViewAdap
             upArrow.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Event event = events.get(getAdapterPosition());
-                    event.setExpanded(!event.isExpanded());
+                    EventTest eventTest = eventTests.get(getAdapterPosition());
+                    eventTest.setExpanded(!eventTest.isExpanded());
                     notifyItemChanged(getAdapterPosition());
                 }
             });
