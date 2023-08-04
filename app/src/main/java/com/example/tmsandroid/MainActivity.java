@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ArrayList<EventTest> eventTests = new ArrayList<>();
-        eventTests.add(new EventTest(1,"Untold","Festival de Muzica", "https://i0.1616.ro/media/2/2701/33647/21212741/1/untold.png", "2022"));
-        eventTests.add(new EventTest(2, "RockFestival", "Festival de Rock", "https://www.institutiilestatului.ro/wp-content/uploads/2023/06/355694001_658527916301559_2796432390177616914_n.jpg", "2023"));
-        eventTests.add(new EventTest(3, "JazzFestival", "Festival de Jazz", "https://www.centrulculturaldeva.ro/wp-content/uploads/2022/08/DJF.jpg", "2024"));
-        eventTests.add(new EventTest(4, "FolkFestival", "Festival de Folk", "https://www.observatorcultural.ro/wp-content/uploads/2022/07/afis-Folk-la-altar-scaled.jpg", "2019"));
+        eventTests.add(new EventTest(1,"Untold","Festival de Muzica", "https://i0.1616.ro/media/2/2701/33647/21212741/1/untold.png", "4 aug 2023"));
+        eventTests.add(new EventTest(2, "Rockstadt", "Festival de Rock", "https://www.institutiilestatului.ro/wp-content/uploads/2023/06/355694001_658527916301559_2796432390177616914_n.jpg", "5 sep 2023"));
+        eventTests.add(new EventTest(3, "Smida Jazz", "Festival de Jazz", "https://www.centrulculturaldeva.ro/wp-content/uploads/2022/08/DJF.jpg", "2 dec 2024"));
+        eventTests.add(new EventTest(4, "Folk Festival", "Festival de Folk", "https://www.observatorcultural.ro/wp-content/uploads/2022/07/afis-Folk-la-altar-scaled.jpg", "12 aug 2023"));
 
         EventsRecViewAdapter adapter = new EventsRecViewAdapter(this);
        adapter.setEvents(eventTests);

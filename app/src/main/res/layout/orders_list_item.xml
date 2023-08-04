@@ -27,7 +27,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="7dp"
                 android:fontFamily="@font/aldrich"
-                android:text="Order details:"
+                android:text="@string/order_details"
                 android:textColor="@color/purple_700"
                 android:textSize="32sp"
                 android:textStyle="bold" />
@@ -40,7 +40,7 @@
                 android:layout_marginTop="7dp"
                 android:layout_below="@+id/orderDetails"
                 android:fontFamily="@font/aldrich"
-                android:text="OrderID"
+                android:text="@string/orderid"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="italic" />
@@ -54,7 +54,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/aldrich"
-                android:text="OrderedAt"
+                android:text="@string/orderedat"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="italic" />
@@ -68,7 +68,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/aldrich"
-                android:text="Number of Tickets"
+                android:text="@string/number_of_tickets"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="italic" />
@@ -82,20 +82,22 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/aldrich"
-                android:text="Total Price"
+                android:text="@string/total_price"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="italic" />
 
             <ImageView
                 android:id="@+id/btnDownArrow2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_below="@+id/totalPrice"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="5dp"
-                android:contentDescription="downArrow"
-                android:src="@drawable/ic_down_arrow" />
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:contentDescription="@string/downarroww"
+                android:src="@drawable/ic_update" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -111,8 +113,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/aldrich"
-                android:text="Edit:"
-                android:textColor="@color/white"
+                android:text="@string/edit"
+                android:textColor="@color/purple_700"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -129,7 +131,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/aldrich"
                     android:onClick="onRadioButtonClicked"
-                    android:text="Standard"
+                    android:text="@string/Standard"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold|italic" />
@@ -140,7 +142,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/aldrich"
                     android:onClick="onRadioButtonClicked"
-                    android:text="VIP"
+                    android:text="@string/VIP"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold|italic" />
@@ -152,11 +154,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/radioGroupEdit"
                 android:layout_centerHorizontal="true"
-                android:hint="Edit number of tickets:"
+                android:hint="@string/edit_number_of_tickets"
                 android:inputType="numberDecimal"
                 android:text=""
                 android:textColorHint="@color/white"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:autofillHints="1" />
 
             <ImageView
                 android:id="@+id/deleteIcon"
@@ -164,19 +167,21 @@
                 android:layout_height="48dp"
                 android:layout_below="@id/editText2"
                 android:layout_centerHorizontal="true"
-                android:contentDescription="Delete"
+                android:contentDescription="@string/delete"
                 android:onClick="openSecondActivity"
                 android:padding="8dp"
                 android:src="@drawable/ic_delete_delete" />
 
             <ImageView
                 android:id="@+id/btnUpArrow2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_below="@id/deleteIcon"
                 android:layout_alignParentEnd="true"
-                android:contentDescription="upArrow"
-                android:src="@drawable/ic_up_arrow" />
+                android:contentDescription="@string/uparrow"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_uparrow_white" />
 
         </RelativeLayout>
     </RelativeLayout>

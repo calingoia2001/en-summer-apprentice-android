@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Orders"
+        android:text="@string/orders"
         android:textColor="@color/white"
         android:textSize="40sp"
         android:layout_centerVertical="true"
@@ -28,7 +28,7 @@
             android:layout_centerVertical="true"
             android:src="@drawable/ic_back_arrow"
             android:onClick="openFirstActivity"
-            android:contentDescription="GoBack"
+            android:contentDescription="@string/goback"
             android:padding="8dp"
             />
     </RelativeLayout>
