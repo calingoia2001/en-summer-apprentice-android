@@ -36,9 +36,9 @@
                 android:id="@+id/orderID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="7dp"
                 android:layout_below="@+id/orderDetails"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/aldrich"
                 android:text="@string/orderid"
                 android:textColor="@color/white"
@@ -87,17 +87,35 @@
                 android:textSize="22sp"
                 android:textStyle="italic" />
 
-            <ImageView
-                android:id="@+id/btnDownArrow2"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/totalPrice"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="5dp"
-                android:contentDescription="@string/downarroww"
-                android:src="@drawable/ic_update" />
+                android:layout_marginTop="10dp">
+                <ImageView
+                    android:id="@+id/deleteIcon2"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="@string/delete"
+                    android:onClick="openSecondActivity"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_delete_delete" />
+
+                <ImageView
+                    android:id="@+id/btnDownArrow2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/totalPrice"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:contentDescription="@string/downarroww"
+                    android:src="@drawable/ic_update" />
+            </LinearLayout>
+
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -123,7 +141,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/edit"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="12dp">
 
                 <RadioButton
                     android:id="@+id/standard"
@@ -158,19 +178,20 @@
                 android:inputType="numberDecimal"
                 android:text=""
                 android:textColorHint="@color/white"
-                android:textSize="16sp"
+                android:fontFamily="@font/aldrich"
+                android:textSize="21sp"
                 android:autofillHints="1" />
 
             <ImageView
                 android:id="@+id/deleteIcon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:layout_below="@id/editText2"
                 android:layout_centerHorizontal="true"
                 android:contentDescription="@string/delete"
                 android:onClick="openSecondActivity"
                 android:padding="8dp"
-                android:src="@drawable/ic_delete_delete" />
+                android:src="@drawable/ic_update" />
 
             <ImageView
                 android:id="@+id/btnUpArrow2"

@@ -8,17 +8,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
+
         <TextView
             android:id="@+id/textEvents"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/perivtina"
             android:text="@string/events"
             android:textColor="@color/white"
-            android:textSize="40sp"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/bebas"/>
+            android:textSize="46sp" />
 
 
         <LinearLayout
